@@ -25,6 +25,10 @@ class Episode {
         }
     }
     
+    public  function __isset($name) {
+        return property_exists($this, $name) && !is_null($this->$name);
+    }
+    
     public function getNerdCastLink() {
         return self::NERDCAST_URL.'nerdcast-'.$this->number;
     }

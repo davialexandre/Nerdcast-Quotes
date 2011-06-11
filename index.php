@@ -3,7 +3,7 @@
         <?php include('includes/facebook.php'); ?>
         <div id="content">
             <h1 title="Nerdcast Quotes">Nerdcast Quotes</h1>
-            <form>
+            <form action="episode.php">
                 <label for="episode">Selecione um episódio do nerdcast: </label>
                 <?php include('includes/select_nerdcasts.php'); ?>
                 <button type="submit" value="OK" title="OK">OK</button>
