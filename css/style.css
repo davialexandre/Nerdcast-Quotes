@@ -1,0 +1,83 @@
+* { 
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #171a1f;
+    font-family: Verdana, Arial;
+}
+
+#content {
+    margin: 0 auto;
+    width: 610px;
+    height: 350px;
+    padding-top: 40px;
+    padding-left: 150px;
+    background: url(images/background.png) top left no-repeat;
+}
+
+#content h1 {
+    width: 584px;
+    height: 55px;
+    background: url(images/title.png) top left no-repeat;
+    text-indent: -9999px;
+    
+    position: relative;
+}
+
+#content form {
+    padding-left: 40px;
+}
+
+#content form label {
+    color: #fff;
+    display: block;
+    font-size: 20px;
+}
+
+#content form select {
+    width: 470px;
+    height: 34px;
+    font-size: 20px;
+    color: #171a1f;
+    border: 1px solid #000;
+    float: left;
+}
+
+#content form button {
+    background: url(images/btn_ok.png) top left no-repeat;
+    width: 50px;
+    height: 34px;
+    text-indent: -9999px;
+    float: left;
+    margin-left: 10px;
+}
+
+#content .ou {
+    clear: both;
+    text-align: center;
+    padding: 20px;
+    color: #fff;
+    font-weight: bold;
+}
+
+#content .frase-aleatoria {
+    display: block;
+    margin: 0 auto;
+}
+
+#footer {
+    padding: 10px;
+    margin: 0 auto;
+    background-color: #242a32;
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+}
+
+#footer a {
+    color: #fff;
+    font-weight: bold;
+}
