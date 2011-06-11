@@ -1,43 +1,18 @@
-<?php
-require_once('classes/Episode.php');
-require_once('lib/facebook.php');
-
-if(isset($_GET['code'])) {
-    header('Location: http://apps.facebook.com/nerdcast_quotes');
-}
-
-/*$facebook = new Facebook(array(
-  'appId' => '216412651714670',
-  'secret' => '193decc78f2a21d82673d704d1b6c252',
-  'cookie' => false,
-  'domain' => 'localhost',
-));
-
-$user = $facebook->getUser();
-
-if(!$user) {
-    $url = $facebook->getLoginUrl(array('scope'=>'publish_stream', 'canvas' => 1, 'fbconnect'=>0));
-    echo "<script type='text/javascript'>top.location.href = '$url';</script>";
-} else {
-    var_dump($facebook->api('/me'));
-}*/
-
-$episode = Episode::getEpisode(256);
-echo $episode->title;
-echo '<br />';
-echo $episode->description;
-echo '<br />';
-
-echo '<ul>';
-foreach($episode->quotes as $quote) {
-    echo '<li>',$quote,'</li>';
-}
-echo '<ul>';
-
-$episode_list = include('includes/episode_list.php');
-?>
-<select>
-    <?php foreach($episode_list as $number => $episode): ?>
-        <option value="<?php echo $number; ?>"><?php echo $number.' - '.$episode; ?></option>
-    <?php endforeach; ?>
-</select>
+<?php include('includes/header.php'); ?>
+    <body>
+        <?php include('includes/facebook.php'); ?>
+        <div id="content">
+            <h1 title="Nerdcast Quotes">Nerdcast Quotes</h1>
+            <form>
+                <label for="episode">Selecione um episódio do nerdcast: </label>
+                <?php include('includes/select_nerdcasts.php'); ?>
+                <button type="submit" value="OK" title="OK">OK</button>
+            </form>
+            <p class="ou">OU GERE UMA</p>
+            <a href="#" onclick="popup(); return false;">
+                <img alt="frase aleatória" title="frase aleatória" src="images/frase_aleatoria.png" class="frase-aleatoria" />
+            </a>
+        </div>
+        <?php include('includes/footer.php'); ?>
+    </body>
+</html>
