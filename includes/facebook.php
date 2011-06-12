@@ -4,6 +4,7 @@
           window.fbAsyncInit = function() {
             FB.init({appId: '216412651714670', status: true, cookie: true,
                      xfbml: true});
+            FB.Canvas.setAutoResize(true,100);
           };
           (function() {
             var e = document.createElement('script'); e.async = true;
