@@ -89,13 +89,19 @@ body {
 }
 
 #quotes_list .quote-block {
-    padding-left: 45px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-right: 20px;
+    padding: 15px 20px 15px 45px;
     background: url(images/quote_top.png) #fff 10px 10px no-repeat;
     margin: 10px;
     -moz-border-radius: 15px;
     border-radius: 15px;
     font-size: 12px;
+}
+
+.no-quotes {
+    padding: 15px 20px 15px 45px;
+    background-color: #fff;
+    font-size: 15px;
+    margin: 10px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
 }
