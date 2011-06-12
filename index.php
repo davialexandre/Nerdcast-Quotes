@@ -9,7 +9,7 @@
                 <button type="submit" value="OK" title="OK">OK</button>
             </form>
             <p class="ou">OU GERE UMA</p>
-            <a href="#" onclick="popup(); return false;">
+            <a href="random.php" onclick="popup(); return false;">
                 <img alt="frase aleatória" title="frase aleatória" src="images/frase_aleatoria.png" class="frase-aleatoria" />
             </a>
         </div>
