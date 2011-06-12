@@ -2,7 +2,7 @@
     <body>
         <?php include('includes/facebook.php'); ?>
         <div id="content">
-            <h1 title="Nerdcast Quotes">Nerdcast Quotes</h1>
+            <a href="index.php"><h1 title="Nerdcast Quotes">Nerdcast Quotes</h1></a>
             <?php require_once('classes/Episode.php'); ?>
             <?php $episode = Episode::getRandomEpisode(); ?>
             <?php while(empty($episode->quotes)) { $episode = Episode::getRandomEpisode(); echo 'a'; } ?>
