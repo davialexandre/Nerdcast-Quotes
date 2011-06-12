@@ -6,15 +6,17 @@ class Episode {
     
     private $number;
     private $title;
+    private $picture;
     private $description;
     private $quotes;
     
     const EPISODES_URL = 'http://www.nerdtrack.com.br/episodios/';
     const NERDCAST_URL = 'http://jovemnerd.ig.com.br/nerdcast/';
     
-    public function __construct($number, $title, $description, $quotes) {
+    public function __construct($number, $title, $picture, $description, $quotes) {
         $this->number = $number;
         $this->title = $title;
+        $this->picture = $picture;
         $this->description = $description;
         $this->quotes = $quotes;
     }
@@ -29,7 +31,7 @@ class Episode {
         return property_exists($this, $name) && !is_null($this->$name);
     }
     
-    public function getNerdCastLink() {
+    public function getNerdcastLink() {
         return self::NERDCAST_URL.'nerdcast-'.$this->number;
     }
     
@@ -43,7 +45,8 @@ class Episode {
         $episodeParser = new EpisodeParser($doc);
         $episode = new Episode(
             $number,
-            $episodeParser->getTitle(), 
+            $episodeParser->getTitle(),
+            $episodeParser->getPicture(),
             $episodeParser->getDescription(), 
             $episodeParser->getQuotes()
         );

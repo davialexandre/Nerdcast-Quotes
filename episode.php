@@ -10,10 +10,13 @@
                 <p class="no-quotes">Nenhuma frase encontrada para o episódio selecionado.</p>
             <?php else: ?>
                 <div id="quotes_list">
+                <?php include('includes/helpers.php'); ?>
                 <?php foreach($episode->quotes as $quote): ?>
                     <div class="quote-block">
                         <p class="quote"><?php echo $quote; ?></p>
-                        <p class="quote-post-link"><a href="#">Postar no meu mural</a></p>
+                        <p class="quote-post-link">
+                            <a href="#" onclick='postDialog(<?php echo create_post_dialog_object($episode, $quote); ?>); return false;'>Postar no meu mural</a>
+                        </p>
                     </div>
                 <?php endforeach; ?>
                 </div>
@@ -24,7 +27,7 @@
                 <button type="submit" value="OK" title="OK">OK</button>
             </form>
             <p class="ou">OU GERE UMA</p>
-            <a href="#" onclick="popup(); return false;">
+            <a href="random.php">
                 <img alt="frase aleatória" title="frase aleatória" src="images/frase_aleatoria.png" class="frase-aleatoria" />
             </a>
         </div>

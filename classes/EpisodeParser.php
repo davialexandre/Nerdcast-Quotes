@@ -14,6 +14,10 @@
             return trim($this->xpath->query("//div[@class='contentfull']/h1")->item(0)->nodeValue);
         }
         
+        public function getPicture() {
+            return trim($this->xpath->query("//div[@class='contentfull']/img")->item(0)->getAttribute('src'));
+        }
+        
         public function getDescription() {
             return trim($this->xpath->query("//div[@class='contentfull']/div")->item(0)->nodeValue);
         }
