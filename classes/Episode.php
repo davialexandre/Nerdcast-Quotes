@@ -59,6 +59,14 @@ class Episode {
         return $episode;
     }
     
+    public static function getRandomEpisode() {
+        $episodes = include('includes/episode_list.php');
+        $rand = rand(0, count($episodes)-1);
+        $episode_numbers = array_keys($episodes);
+        
+        return self::getEpisode($episode_numbers[$rand]);
+    }
+    
 }
 
 ?>

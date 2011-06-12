@@ -4,10 +4,8 @@
         <div id="content">
             <h1 title="Nerdcast Quotes">Nerdcast Quotes</h1>
             <?php require_once('classes/Episode.php'); ?>
-            <?php $episodes = include('includes/episode_list.php'); ?>
-            <?php $rand = rand(0, count($episodes)-1); ?>
-            <?php $episode_numbers = array_keys($episodes); ?>
-            <?php $episode = Episode::getEpisode($episode_numbers[$rand]); ?>
+            <?php $episode = Episode::getRandomEpisode(); ?>
+            <?php while(empty($episode->quotes)) { $episode = Episode::getRandomEpisode(); echo 'a'; } ?>
             <?php $quote = $episode->getRandomQuote(); ?>
             <h2 class="espisode-title"><?php echo $episode->title; ?></h2>
             <div id="quotes_list">
