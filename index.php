@@ -1,3 +1,4 @@
+<?php include('includes/handle_facebook_authentication.php'); ?>
 <?php include('includes/header.php'); ?>
     <body>
         <?php include('includes/facebook.php'); ?>
