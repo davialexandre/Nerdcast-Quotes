@@ -4,24 +4,22 @@
         <div id="content">
             <h1 title="Nerdcast Quotes">Nerdcast Quotes</h1>
             <?php require_once('classes/Episode.php'); ?>
-            <?php $episode = Episode::getEpisode($_GET['episode']); ?>
+            <?php $episodes = include('includes/episode_list.php'); ?>
+            <?php $rand = rand(0, count($episodes)-1); ?>
+            <?php $episode_numbers = array_keys($episodes); ?>
+            <?php $episode = Episode::getEpisode($episode_numbers[$rand]); ?>
+            <?php $quote = $episode->getRandomQuote(); ?>
             <h2 class="espisode-title"><?php echo $episode->title; ?></h2>
-            <?php if(empty($episode->quotes)): ?>
-                <p class="no-quotes">Nenhuma frase encontrada para o episódio selecionado.</p>
-            <?php else: ?>
-                <div id="quotes_list">
-                <?php include('includes/helpers.php'); ?>
-                <?php foreach($episode->quotes as $quote): ?>
-                    <div class="quote-block">
-                        <p class="quote"><?php echo $quote; ?></p>
-                        <p class="quote-post-link">
-                            <a href="#" onclick='postDialog(<?php echo create_post_dialog_object($episode, $quote); ?>); return false;'>Postar no meu mural</a>
-                        </p>
-                    </div>
-                <?php endforeach; ?>
+            <div id="quotes_list">
+            <?php include('includes/helpers.php'); ?>
+                <div class="quote-block">
+                    <p class="quote"><?php echo $quote; ?></p>
+                    <p class="quote-post-link">
+                        <a href="#" onclick='postDialog(<?php echo create_post_dialog_object($episode, $quote); ?>); return false;'>Postar no meu mural</a>
+                    </p>
                 </div>
-            <?php endif; ?>
-            <form>
+            </div>
+            <form action="episode.php">
                 <label for="episode">Selecione um episódio do nerdcast: </label>
                 <?php include('includes/select_nerdcasts.php'); ?>
                 <button type="submit" value="OK" title="OK">OK</button>

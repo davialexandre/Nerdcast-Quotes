@@ -39,6 +39,11 @@ class Episode {
         return self::EPISODES_URL.$this->number;
     }
     
+    public function getRandomQuote() {
+        $rand = rand(0, count($this->quotes)-1);
+        return $this->quotes[$rand];
+    }
+    
     public static function getEpisode($number) {
         $doc = new DOMDocument();
         $doc->loadHTMLFile(self::EPISODES_URL.$number);
