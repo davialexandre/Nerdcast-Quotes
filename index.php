@@ -3,6 +3,7 @@
     <body>
         <?php include('includes/facebook.php'); ?>
         <div id="content">
+            <div id="like"><fb:like href="http://www.facebook.com/apps/application.php?id=216412651714670" send="false" layout="button_count" show_faces="false" font=""></fb:like></div>
             <a href="index.php"><h1 title="Nerdcast Quotes">Nerdcast Quotes</h1></a>
             <form action="episode.php">
                 <label for="episode">Selecione um episódio do nerdcast: </label>

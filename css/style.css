@@ -22,8 +22,14 @@ body {
     height: 55px;
     background: url(images/title.png) top left no-repeat;
     text-indent: -9999px;
-    
     position: relative;
+}
+
+#content #like {
+    position: absolute;
+    padding-right: 30px;
+    top: 200px;
+    left: 55px;
 }
 
 #content form {
