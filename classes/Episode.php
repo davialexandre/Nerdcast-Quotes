@@ -46,15 +46,20 @@ class Episode {
     
     public static function getEpisode($number) {
         $doc = new DOMDocument();
-        $doc->loadHTMLFile(self::EPISODES_URL.$number);
-        $episodeParser = new EpisodeParser($doc);
-        $episode = new Episode(
-            $number,
-            $episodeParser->getTitle(),
-            $episodeParser->getPicture(),
-            $episodeParser->getDescription(), 
-            $episodeParser->getQuotes()
-        );
+        
+        try {
+            $loaded = $doc->loadHTMLFile(self::EPISODES_URL.$number);
+            $episodeParser = new EpisodeParser($doc);
+            $episode = new Episode(
+                $number,
+                $episodeParser->getTitle(),
+                $episodeParser->getPicture(),
+                $episodeParser->getDescription(), 
+                $episodeParser->getQuotes()
+            );
+        } catch(ErrorException $e) {
+            $episode = null;
+        }
         
         return $episode;
     }

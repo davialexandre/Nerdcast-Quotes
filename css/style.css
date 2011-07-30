@@ -105,3 +105,11 @@ body {
     -moz-border-radius: 15px;
     border-radius: 15px;
 }
+
+.episode-error {
+    padding: 30px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    background: url(images/warning.png) #fff center right no-repeat;
+    margin: 10px;
+}
